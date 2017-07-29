@@ -75,92 +75,36 @@ class TrackingViewController: UIViewController,CLLocationManagerDelegate,MKMapVi
         mapView.showsUserLocation = true
         mapView.mapType = MKMapType(rawValue: 0)!
         mapView.userTrackingMode = MKUserTrackingMode(rawValue: 2)!
-        
-        /*let email:String = "kaiweilin927@gmail.com"
-        let password: String = "Lkw7811178"
-        
-        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (FIRUser, NSError) in
-            if NSError == nil {
-                self.uid = FIRUser!.uid
-            } else {
-                FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (FIRUser, NSError) in
-                    if NSError == nil {
-                        self.uid = FIRUser!.uid
-                        print("uid:  \(self.uid)");
-                    } else {
-                        
-                        print("can't sign in")
-                    }
-                    
-                })
-            }
-        })*/
-        
-         // Do any additional setup after loading the view.
-    }
-
-    
-    /*@IBAction func SendMessage(_ sender: UIButton) {
-
-        let messageVC = MFMessageComposeViewController()
-        messageVC.body = "http://www.seniordriver.tk/index.php/Tracking/map/\(self.uid)/\(self.mapId)"
-        messageVC.messageComposeDelegate = self
-        
-        self.present(messageVC, animated: true, completion: nil)
-    }*/
-
+ 
     
     @IBAction func ShareLocation(_ sender: UIButton) {
         
         
         if (ShareLocBtn.titleLabel?.text=="  Share My Location  "){
 
-            
-            
-            
+
             let cnPicker = CNContactPickerViewController()
             cnPicker.delegate = self
             self.present(cnPicker, animated: true, completion: nil)
             
             
-            /*let messageVC = MFMessageComposeViewController()
+            let messageVC = MFMessageComposeViewController()
             
             messageVC.body = "http://www.seniordriver.tk/index.php/Tracking/map/\(self.uid)/\(self.mapId)"
             messageVC.messageComposeDelegate = self
             messageVC.recipients = [CoreDataManager.fetchObj().phoneNo!]
-            self.present(messageVC, animated: true, completion: nil)*/
+            self.present(messageVC, animated: true, completion: nil)
             
-            /*self.rootRef.keepSynced(true)
+            self.rootRef.keepSynced(true)
             self.manager.startUpdatingLocation()
-            ShareLocBtn.setTitle("Stop Sharing", for: .normal )*/
+            ShareLocBtn.setTitle("Stop Sharing", for: .normal )
             
-            /*var alertController = UIAlertController(title: "Start sharing", message: "We will generate an URL in the body of message for you, please choose the receiver from the Contacts and then send it!", preferredStyle: UIAlertControllerStyle.alert)
-            
-            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                
-                //run your function here
-                self.rootRef.keepSynced(true)
-                self.manager.startUpdatingLocation()
-                
-                let messageVC = MFMessageComposeViewController()
-                
-                messageVC.body = "Hi, this is message from SeniorDriver.tk. Your family member is sharing location with you, please click the following link to view. http://www.seniordriver.tk/index.php/Tracking/map/\(self.uid)/\(self.mapId)"
-                messageVC.messageComposeDelegate = self
-                self.present(messageVC, animated: true, completion: nil)
-            }))
-            
-            alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { action in
-                alertController.dismiss(animated: true, completion:nil)
-
-                }))
-            
-            self.present(alertController, animated: true, completion: nil)
             
             let messageVC = MFMessageComposeViewController()
             
             messageVC.body = "http://www.seniordriver.tk/index.php/Tracking/map/\(self.uid)/\(self.mapId)"
             messageVC.messageComposeDelegate = self
-            self.present(messageVC, animated: true, completion: nil)*/
+            self.present(messageVC, animated: true, completion: nil)
             
             
 
